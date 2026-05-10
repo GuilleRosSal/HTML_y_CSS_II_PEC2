@@ -2,37 +2,37 @@
 @use "../functions" as f;
 
 @layer main {
-  .section {
-    &:not(:has(.form--invalid)) .alert-danger,
-    &:not(:has(.form--valid)) .alert-success {
-      display: none;
-    }
+  .alert {
+    text-align: center;
+  }
 
+  .alert-danger {
+    color: oklch(50% 0.25 20);
+    background-color: oklch(90% 0.1 20);
+    border-color: oklch(80% 0.15 20);
+  }
+
+  .alert-success {
+    color: oklch(45% 0.2 140);
+    background-color: oklch(90% 0.1 140);
+    border-color: oklch(80% 0.15 140);
+  }
+
+  .section {
     &:has(.form--invalid) .alert-danger,
     &:has(.form--valid) .alert-success {
       display: block;
+    }
+
+    &:not(:has(.form--invalid)) .alert-danger,
+    &:not(:has(.form--valid)) .alert-success {
+      display: none;
     }
   }
 
   .container {
     container-name: section-container;
     container-type: inline-size;
-  }
-
-  .alert {
-    text-align: center;
-  }
-
-  .alert-danger {
-    background-color: oklch(90% 0.1 20);
-    color: oklch(50% 0.25 20);
-    border-color: oklch(80% 0.15 20);
-  }
-
-  .alert-success {
-    background-color: oklch(90% 0.1 140);
-    color: oklch(45% 0.2 140);
-    border-color: oklch(80% 0.15 140);
   }
 
   .form {
@@ -61,12 +61,12 @@
 
     &:where(:hover, :focus) {
       color: color-mix(in oklch, v.$secondary-color, oklch(0% 0 0));
+      outline: 2px solid oklch(60% 0.125 66);
       background-color: color-mix(
         in oklch,
         v.$primary-color,
         oklch(65.636% 0.08839 71.561)
       );
-      outline: 2px solid oklch(60% 0.125 66);
     }
   }
 }
