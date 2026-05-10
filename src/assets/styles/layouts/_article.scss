@@ -1,0 +1,96 @@
+@use "../variables" as v;
+@use "../functions" as f;
+
+@layer utils {
+  .article__section :where(h1, h2, p, img) {
+    margin-bottom: f.space(2);
+  }
+}
+
+@layer main {
+  .article {
+    &__hero {
+      width: 100%;
+      height: 30vh;
+      object-fit: cover;
+
+      @media screen and (width >= 768px) {
+        height: 45vh;
+      }
+    }
+
+    &__section {
+      margin-inline: f.space(2);
+
+      @media screen and (width >= 768px) {
+        &:not(:has(img)),
+        &:has(img) :where(p, h2) {
+          max-width: 800px;
+          margin-inline: auto;
+        }
+      }
+
+      &--intro {
+        display: flex;
+        flex-direction: column;
+        container-name: intro-container;
+        container-type: inline-size;
+
+        @media screen and (width >= 576px) {
+          flex-direction: row;
+          gap: f.space(2);
+        }
+      }
+
+      &:not(:last-child) {
+        padding-bottom: f.space(1);
+        margin-bottom: f.space(4);
+        border-bottom: 1px solid v.$primary-color;
+      }
+    }
+
+    &__img {
+      width: 100%;
+      height: auto;
+
+      @media screen and (width >= 768px) {
+        max-width: 1200px;
+        margin-inline: auto;
+      }
+    }
+
+    &__title {
+      margin-top: f.space(2);
+      font-size: f.to-rem(24px);
+      color: v.$primary-color;
+      text-align: center;
+
+      @media screen and (width >= 768px) {
+        font-size: f.to-rem(32px);
+      }
+    }
+
+    &__subtitle {
+      font-size: f.to-rem(22px);
+      color: v.$primary-color;
+
+      @media screen and (width >= 768px) {
+        font-size: f.to-rem(28px);
+      }
+    }
+
+    &__p {
+      &--featured {
+        font-size: f.to-rem(18px);
+
+        @media screen and (width >= 768px) {
+          font-size: f.to-rem(20px);
+        }
+
+        @container intro-container (width >= 576px) {
+          flex: 0 0 33cqw;
+        }
+      }
+    }
+  }
+}

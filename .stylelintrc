@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-config-recess-order",
+    "stylelint-config-prettier-scss"
+  ],
+  "rules": {
+    "selector-class-pattern": "^.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
+    "selector-max-id": 0,
+    "selector-no-qualifying-type": true,
+    "no-descending-specificity": true,
+    "selector-max-compound-selectors": 3,
+    "max-nesting-depth": 4,
+
+    "font-family-no-duplicate-names": true,
+    "color-hex-length": "short",
+    "color-named": "never",
+    "alpha-value-notation": "number",
+
+    "scss/dollar-variable-pattern": "^[a-z][a-z0-9-]+$",
+    "scss/at-function-pattern": "^[a-z][a-z0-9-]+$",
+    "scss/at-mixin-pattern": "^[a-z][a-z0-9-]+$",
+    "scss/no-duplicate-dollar-variables": true
+  }
+}

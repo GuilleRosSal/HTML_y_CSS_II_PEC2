@@ -1,0 +1,72 @@
+@use "../variables" as v;
+@use "../functions" as f;
+
+@layer main {
+  .section {
+    &:not(:has(.form--invalid)) .alert-danger,
+    &:not(:has(.form--valid)) .alert-success {
+      display: none;
+    }
+
+    &:has(.form--invalid) .alert-danger,
+    &:has(.form--valid) .alert-success {
+      display: block;
+    }
+  }
+
+  .container {
+    container-name: section-container;
+    container-type: inline-size;
+  }
+
+  .alert {
+    text-align: center;
+  }
+
+  .alert-danger {
+    background-color: oklch(90% 0.1 20);
+    color: oklch(50% 0.25 20);
+    border-color: oklch(80% 0.15 20);
+  }
+
+  .alert-success {
+    background-color: oklch(90% 0.1 140);
+    color: oklch(45% 0.2 140);
+    border-color: oklch(80% 0.15 140);
+  }
+
+  .form {
+    &__label {
+      color: v.$primary-color;
+    }
+
+    &__input {
+      &--textarea {
+        height: 25dvh;
+
+        @container section-container (width >= 768) {
+          height: f.space(14);
+        }
+      }
+    }
+  }
+
+  .btn-primary {
+    color: v.$secondary-color;
+    background-color: v.$primary-color;
+    border-color: v.$primary-color;
+    transition:
+      background-color 0.3s ease,
+      outline 0.3s ease;
+
+    &:where(:hover, :focus) {
+      color: color-mix(in oklch, v.$secondary-color, oklch(0% 0 0));
+      background-color: color-mix(
+        in oklch,
+        v.$primary-color,
+        oklch(65.636% 0.08839 71.561)
+      );
+      outline: 2px solid oklch(60% 0.125 66);
+    }
+  }
+}

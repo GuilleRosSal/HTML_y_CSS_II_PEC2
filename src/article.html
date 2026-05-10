@@ -1,0 +1,123 @@
+<!doctype html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Artículo destacado de la web de las jornadas sobre artesanía en Morella, organizadas por el ayuntamiento de Morella"
+    />
+
+    <!-- do not remove this line! -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/styles/css-layers.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml" />
+    <title>Jornadas de artesanía</title>
+  </head>
+  <body>
+    <include src="./views/header.html"></include>
+
+    <main class="main">
+      <article class="article">
+        <img
+          src="./assets/images/articulo_principal.jpg"
+          alt="Proceso de modelado de arcilla"
+          class="article__hero"
+        />
+        <h1 class="article__title">El arte de la alfarería</h1>
+
+        <section class="article__section article__section--intro">
+          <p class="article__p article__p--featured">
+            La alfarería es el arte con el que nuestras manos dan vida a objetos
+            únicos y funcionales.
+          </p>
+          <p class="article__p">
+            En las jornadas de este año en Morella, ponemos el foco en el
+            proceso creativo que transforma una masa informe de arcilla en una
+            pieza de cerámica. Este arte requiere paciencia, precisión y, sobre
+            todo, un conocimiento profundo de los materiales naturales que nos
+            ofrece nuestro entorno.
+          </p>
+        </section>
+
+        <section class="article__section article__section--steps">
+          <h2 class="article__subtitle">Guía básica del modelado en torno</h2>
+          <ol class="article__list">
+            <li class="article__item">
+              <dl>
+                <dt>Preparación y amasado</dt>
+                <dd>
+                  Se elimina el aire de la arcilla para evitar burbujas que
+                  puedan romper la pieza en el horno.
+                </dd>
+              </dl>
+            </li>
+            <li class="article__item">
+              <dl>
+                <dt>Centrado y apertura</dt>
+                <dd>
+                  En el torno, se fija la arcilla en el eje exacto y se presiona
+                  el pulgar en el centro para crear la base.
+                </dd>
+              </dl>
+            </li>
+            <li class="article__item">
+              <dl>
+                <dt>Subida de paredes</dt>
+                <dd>
+                  Con las manos húmedas, se aplica presión constante para dar la
+                  altura y el grosor deseado a la pieza.
+                </dd>
+              </dl>
+            </li>
+            <li class="article__item">
+              <dl>
+                <dt>Retorneado y detalles</dt>
+                <dd>
+                  Una vez que la pieza tiene consistencia "de cuero", se
+                  eliminan los excesos y se añaden grabados o texturas finales.
+                </dd>
+              </dl>
+            </li>
+          </ol>
+        </section>
+
+        <section class="article__section article__section--extra">
+          <h2 class="article__subtitle">Cocción y decoración</h2>
+          <p class="article__p article__p--featured">
+            El proceso de cocción es el momento crítico donde el agua química
+            desaparece para dar paso a la vitrificación del material.
+          </p>
+          <p class="article__p">
+            Tras el modelado, las piezas deben secarse lentamente a temperatura
+            ambiente para evitar grietas. Posteriormente, se introducen en el
+            horno cerámico en una primera cocción llamada "bizcochado",
+            alcanzando temperaturas superiores a los 900°C que endurecen la
+            estructura permanentemente.
+          </p>
+          <img
+            src="./assets/images/articulo_secundario.jpg"
+            alt="Cerámica finalizada"
+            class="article__img"
+          />
+          <p class="article__p">
+            Finalmente, llega la etapa del esmaltado y la decoración. Aplicar
+            óxidos metálicos o pigmentos permite que platos y tazas adquieran
+            esos acabados brillantes y coloridos que vemos en las mesas de
+            Morella, cerrando un ciclo que une utilidad, tradición y belleza
+            estética.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
+</html>

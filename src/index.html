@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Portada de la web de las jornadas sobre artesanía en Morella, organizadas por el ayuntamiento de Morella"
+    />
+
+    <!-- do not remove this line! -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/styles/css-layers.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml" />
+    <title>Jornadas de artesanía</title>
+  </head>
+  <body>
+    <include src="./views/header.html"></include>
+
+    <main class="main">
+      <section class="hero">
+        <img
+          src="assets/images/portada_principal.jpg"
+          alt="Jarrones de cerámica"
+          class="hero__image hero__image--main"
+        />
+        <h1 class="hero__slogan">Feria de artesanía de Morella</h1>
+        <p class="hero__summary">
+          Explora la creatividad sin límites en nuestras jornadas anuales.
+          Charlas exclusivas, demostraciones en vivo y una exposición de obras
+          innovadoras que reúnen el talento de artesanos de todo el mundo.
+        </p>
+        <p class="hero__organizator">Ayuntamiento de Morella</p>
+        <img
+          src="assets/images/portada_secundaria.jpg"
+          alt="Diversidad de cestas y obras de madera"
+          class="hero__image hero__image--secondary"
+        />
+      </section>
+    </main>
+
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
+</html>

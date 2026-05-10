@@ -1,0 +1,45 @@
+@use "../variables" as v;
+@use "../functions" as f;
+@use "sass:color";
+
+@layer main {
+  .header {
+    @media screen and (width >= 992) {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+    }
+  }
+
+  .navbar {
+    --bs-tertiary-bg-rgb:
+      #{color.red(v.$secondary-color), color.green(v.$secondary-color),
+      color.blue(v.$secondary-color)};
+
+    border-bottom: 1px solid v.$primary-color;
+
+    &__logo-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: v.$primary-color;
+    }
+
+    &__logo-icon {
+      display: block;
+      margin-right: f.space(1);
+    }
+
+    &__logo-name {
+      margin: 0;
+    }
+
+    &__links-container {
+      justify-content: end;
+    }
+
+    &__link {
+      color: v.$primary-color;
+    }
+  }
+}

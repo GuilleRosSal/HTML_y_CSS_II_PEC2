@@ -1,0 +1,119 @@
+<!doctype html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Formulario de contacto para inscribirse como orador en las jornadas sobre artesanía en Morella, organizadas por el ayuntamiento de Morella"
+    />
+
+    <!-- do not remove this line! -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/styles/css-layers.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml" />
+    <title>Jornadas de artesanía</title>
+  </head>
+  <body>
+    <include src="./views/header.html"></include>
+
+    <main class="main">
+      <section class="section container">
+        <h1 class="section__title">Da tu propia charla</h1>
+
+        <p class="section__p">
+          ¿Quieres asistir a las jornadas de artesanía como algo más que
+          público? Contacta con nosotros para ofrecer tu propia charla sobre tu
+          especialidad artesana.
+        </p>
+
+        <div class="alert alert-danger" role="alert">
+          Ha habido un error con el formulario. Revisa que hayas completado
+          correctamente todos los campos.
+        </div>
+
+        <div class="alert alert-success" role="alert">
+          El formulario se ha enviado correctamente. Pronto nos pondremos en
+          contacto contigo.
+        </div>
+
+        <form action="" class="form" id="artisanForm" novalidate>
+          <div class="form__field form-floating mb-3">
+            <input
+              type="text"
+              class="form__input form-control"
+              id="name"
+              placeholder="Ex. Julian"
+              required
+            />
+            <label class="form__label" for="name">Nombre</label>
+          </div>
+
+          <div class="form__field form-floating mb-3">
+            <input
+              type="text"
+              class="form__input form-control"
+              id="surname"
+              placeholder="Ex. Hernández"
+              required
+            />
+            <label class="form__label" for="surname">Apellidos</label>
+          </div>
+
+          <div class="form__field form-floating mb-3">
+            <input
+              type="email"
+              class="form__input form-control"
+              id="email"
+              placeholder="name@example.com"
+              required
+            />
+            <label class="form__label" for="email">Correo electrónico</label>
+          </div>
+
+          <div class="form__field form-floating mb-3">
+            <select
+              class="form__input form__input--select form-select"
+              id="subject"
+              required
+            >
+              <option selected hidden>Selecciona una temática</option>
+              <option value="ceramica">Alfarería y Cerámica</option>
+              <option value="madera">Ebanistería y Madera</option>
+              <option value="textil">Arte Téxtil</option>
+              <option value="forja">Forja y Metal</option>
+              <option value="otros">Otros</option>
+            </select>
+            <label class="form__label" for="subject"
+              >Temática de la charla</label
+            >
+          </div>
+
+          <div class="form__field form-floating mb-3">
+            <textarea
+              class="form__input form__input--textarea form-control"
+              placeholder="Breve resumen de tu charla/clase"
+              id="summary"
+              required
+            ></textarea>
+            <label class="form__label" for="summary"
+              >Resumen de la charla</label
+            >
+          </div>
+          <button type="submit" class="form__submit btn btn-primary">
+            Enviar información
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
+</html>

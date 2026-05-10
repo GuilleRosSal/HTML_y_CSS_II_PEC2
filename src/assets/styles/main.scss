@@ -1,0 +1,23 @@
+/**
+ * Use this file to import partials.
+ * Do not include SCSS code in this file.
+ */
+
+@use "variables";
+
+/* ---------- Layer: Normalize ---------- */
+@use "normalize";
+
+/* -------- Layer: Dependencies -------- */
+@use "dependencies";
+
+/* ------------ Layer: Utils ------------ */
+@use "utils";
+
+/* ---- Layer: Main (Custom Styles) ---- */
+@use "layouts/header";
+@use "layouts/footer";
+@use "layouts/home";
+@use "layouts/speakers";
+@use "layouts/article";
+@use "layouts/contact";

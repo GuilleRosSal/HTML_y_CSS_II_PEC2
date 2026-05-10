@@ -1,0 +1,73 @@
+@use "../variables" as v;
+@use "../functions" as f;
+
+@layer utils {
+  .footer__link:where(:hover, :focus) {
+    text-decoration: underline;
+  }
+}
+
+@layer main {
+  .footer {
+    padding: f.space(2) f.space(4) f.space(4) f.space(4);
+    margin-top: f.space(2);
+
+    &__list {
+      display: flex;
+      flex-direction: row;
+      gap: f.space(2);
+      padding: 0;
+      margin: 0;
+
+      &--decoration {
+        justify-content: center;
+      }
+
+      &--contacts {
+        justify-content: end;
+        min-width: 150px;
+      }
+
+      &--hidden {
+        display: none;
+
+        @media screen and (width >= 768px) {
+          display: flex;
+        }
+      }
+    }
+
+    &__nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__logo-container {
+      display: flex;
+      flex-direction: row;
+      gap: f.space(1);
+      align-items: center;
+      min-width: 150px;
+      color: v.$primary-color;
+
+      &:where(:hover, :focus) {
+        text-decoration: underline;
+      }
+    }
+
+    &__logo-name {
+      margin: 0;
+    }
+
+    &__extra-info {
+      padding-bottom: f.space(2);
+      margin-bottom: f.space(2);
+      border-bottom: 1px solid v.$primary-color;
+    }
+
+    &__link {
+      color: v.$primary-color;
+    }
+  }
+}

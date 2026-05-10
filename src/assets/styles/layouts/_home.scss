@@ -1,0 +1,118 @@
+@use "../variables" as v;
+@use "../functions" as f;
+
+@layer main {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: f.space(1);
+    justify-content: center;
+    container-name: hero-container;
+    container-type: inline-size;
+    font-family: v.$font-family-serif;
+    text-align: center;
+
+    &__slogan {
+      padding-inline: f.space(2);
+      margin-top: f.space(1);
+      font-size: f.to-rem(24px);
+      font-weight: bold;
+      color: v.$primary-color;
+
+      @media screen and (width >= 768px) {
+        font-size: f.to-rem(32px);
+      }
+    }
+
+    &__summary {
+      padding-inline: f.space(2);
+    }
+
+    &__organizator {
+      padding-inline: f.space(2);
+      font-size: f.to-rem(16px);
+      font-weight: 500;
+
+      @media screen and (width >= 768px) {
+        font-size: f.to-rem(20px);
+      }
+    }
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media screen and (width >= 992px) {
+      &__image--main {
+        height: 50vh;
+      }
+
+      &__summary {
+        align-self: center;
+        max-width: 600px;
+      }
+
+      &__image--secondary {
+        align-self: center;
+        max-width: 400px;
+        height: auto;
+      }
+
+      @supports (display: grid) {
+        display: grid;
+        grid-template-rows: 180px 150px repeat(3, 100px) 50px;
+        grid-template-columns: repeat(3, 1fr) 50px repeat(2, 1fr);
+        gap: 0;
+
+        &__image--main {
+          z-index: 1;
+          grid-row: 1 / 6;
+          grid-column: 1 / 5;
+          height: 100%;
+        }
+
+        &__slogan {
+          z-index: 3;
+          display: flex;
+          grid-row: 3 / 4;
+          grid-column: 2 / 6;
+          align-items: center;
+          justify-content: center;
+          color: v.$secondary-color;
+          text-shadow: 2px 2px 4px v.$primary-color;
+          transform: rotate(10deg);
+
+          @container hero-container (width >= 992px) {
+            font-size: clamp(1.5rem, 8cqw, 4rem);
+          }
+        }
+
+        &__summary {
+          grid-row: 1 / 2;
+          grid-column: 5 / 7;
+          max-width: none;
+          margin: auto;
+          line-height: 2;
+        }
+
+        &__organizator {
+          grid-row: 6 / 7;
+          grid-column: 1 / 4;
+          margin-top: f.space(1);
+          margin-right: f.space(4);
+          text-align: right;
+        }
+
+        &__image--secondary {
+          z-index: 2;
+          grid-row: 2 / 7;
+          grid-column: 4 / 7;
+          max-width: none;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
